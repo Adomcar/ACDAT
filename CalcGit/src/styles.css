@@ -1,9 +1,8 @@
-/* src/styles.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #6e6e6e; /* fondo negro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,10 +10,11 @@ body {
 }
 
 .calculator {
-  background-color: #333;
+  background-color: #1a1a1a; /* gris oscuro casi negro */
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3); /* sombra roja */
   width: 300px;
+  border-radius: 20px;
 }
 
 .display {
@@ -28,9 +28,10 @@ body {
   text-align: right;
   padding: 0 15px;
   border: none;
-  background-color: #222;
-  color: white;
+  background-color: #000;
+  color: #ff4d4d; /* rojo claro */
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .buttons {
@@ -45,10 +46,12 @@ body {
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  border-radius: 12px;
 }
 
 .btn:hover {
-  opacity: 0.8;
+  background-color: #ff1a1a; /* rojo más intenso al pasar el mouse */
+  color: white;
 }
 
 .btn:active {
@@ -56,22 +59,22 @@ body {
 }
 
 .btn.number {
-  background-color: #666;
+  background-color: #4d0000; /* rojo oscuro */
   color: white;
 }
 
 .btn.operator {
-  background-color: #ff9500;
+  background-color: #b30000; /* rojo medio */
   color: white;
 }
 
 .btn.clear {
-  background-color: #a6a6a6;
-  color: black;
+  background-color: #800000; /* rojo apagado */
+  color: white;
 }
 
 .btn.equals {
-  background-color: #ff9500;
+  background-color: #e60000; /* rojo brillante */
   color: white;
   grid-row: span 2;
 }

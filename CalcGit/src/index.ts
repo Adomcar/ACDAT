@@ -54,7 +54,7 @@ function calculate(): void {
         const prev = parseFloat(previousInput);
         const current = parseFloat(currentInput);
         let result: number;
-        
+
         switch (operator) {
             case '+':
                 result = prev + current;
@@ -75,7 +75,7 @@ function calculate(): void {
             default:
                 return;
         }
-        
+
         currentInput = result.toString();
         operator = '';
         previousInput = '';
@@ -90,15 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupEventListeners(): void {
     const buttonsContainer = document.querySelector('.buttons');
-    
+
     if (buttonsContainer) {
         buttonsContainer.addEventListener('click', (event) => {
             const target = event.target as HTMLButtonElement;
-            
+
             if (target.tagName === 'BUTTON') {
                 const action = target.dataset.action;
                 const value = target.dataset.value;
-                
+
                 if (action === 'clear') {
                     clearDisplay();
                 } else if (action === 'delete') {
@@ -107,6 +107,8 @@ function setupEventListeners(): void {
                     calculate();
                 } else if (value) {
                     appendToDisplay(value);
+                }else if (action === 'sqrt') {
+                    calcularRaizCuadrada();
                 }
             }
         });
@@ -117,7 +119,7 @@ function setupEventListeners(): void {
 
 function setupKeyboardEvents(): void {
     const keyboardEvents$ = fromEvent<KeyboardEvent>(document, 'keydown');
-    
+
     keyboardEvents$
         .pipe(
             debounceTime(50),
@@ -149,3 +151,13 @@ function setupKeyboardEvents(): void {
         });
 }
 
+function calcularRaizCuadrada(): void {
+    const valor = parseFloat(currentInput);
+    if (valor < 0) {
+        alert('Error: No se puede calcular la raíz cuadrada de un número negativo');
+        return;
+    }
+    const resultado = Math.sqrt(valor);
+    currentInput = resultado.toString();
+    updateDisplay();
+}
