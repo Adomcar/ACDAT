@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tipo = prompt("A que quieres convertir (C/c --> Celsius / F/f --> Fahrenheit): ")
+        
+        if(tipo == "C" || tipo == "c"){
+            let Fahrenheit = parseInt(prompt("Introduce la temperatura en grados Fahrenheit: "))
+
+            document.write(Fahrenheit + " grados Farenheit equivalen a " + FahrenheitToCelsius(Fahrenheit) + " grados Celsius.");
+
+        }else if(tipo == "F" || tipo == "f"){
+            let Celsius = parseInt(prompt("Introduce la temperatura en grados Celsius: "))
+
+            document.write(Celsius + " grados Celsius equivalen a " + CelsiusToFahrenheit(Celsius) + " grados Fahrenheit.");
+        }else{
+            document.write("El tipod de grados introducido no es valido.");
+        }
+
+        function FahrenheitToCelsius (Fahrenheit){
+            let result = (Fahrenheit -32) * 5/9;
+            
+            return result;
+        }
+
+        function CelsiusToFahrenheit (Celsius){
+            let result = (Celsius + 32) / (5/9);
+            
+            return result;
+        }
+
+    </script>
+</body>
+</html>

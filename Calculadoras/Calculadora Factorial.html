@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var number = parseInt(prompt("Introduce un numero entero no negativo: "));
+
+        if(number < 0){
+            alert("El numero introducido no puede ser menor que 0.");
+            number =parseInt(prompt("Introduzca de nuevo el numero: "));
+        }else{
+            document.write("El numero introducido es " + number + " y su factorial es " + calculateFactorial(number));
+        }
+        
+        function calculateFactorial (number){
+            let result = 1;
+
+            for (let index = 1; index <= number; index++) {
+                
+                result *= index;
+
+            }
+
+            return result;
+        }
+    </script>
+</body>
+</html>
